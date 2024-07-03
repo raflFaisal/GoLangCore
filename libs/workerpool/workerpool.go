@@ -47,6 +47,7 @@ func (wp *workerPool) Run() {
 // AddTask adds a task to the worker pool.
 func (wp *workerPool) AddTask(task func()) {
     wp.wg.Add(1)
+    log.Println("Adding Task in Queue")
     wp.queuedTaskC <- task
 }
 
