@@ -9,7 +9,7 @@ import (
  "time"
 )
 
-var maxCount int
+// Reference: https://medium.com/@souravchoudhary0306/mastering-concurrent-processing-a-step-by-step-guide-to-building-a-scalable-worker-pool-in-go-54093074c612
 
 // ReqHandler is a map of request handlers, keyed by request type.
 var ReqHandler = map[int]RequestHandler{
@@ -55,12 +55,9 @@ func (d *dispatcher) ScaleWorkers(minWorkers, maxWorkers, loadThreshold int) {
 
  for range ticker.C {
   load := len(d.inCh) // Current load is the number of pending requests in the channel
-//   fmt.Println("---------------->> load: ", load)
-//   fmt.Println("---------------->> loadThreshold*0.75: ", loadThreshold)
-  if (maxCount < d.workerCount) {
-    fmt.Println("---------------->> d.workerCount: ", d.workerCount)
-  }
-  maxCount = d.workerCount
+  // fmt.Println("---------------->> load: ", load)
+  // fmt.Println("---------------->> loadThreshold*0.75: ", loadThreshold)
+  // fmt.Println("---------------->> d.workerCount: ", d.workerCount)
   if load > loadThreshold && d.workerCount < maxWorkers {
    fmt.Println("---------------->> Scale Worker")
    newWorker := &Worker{

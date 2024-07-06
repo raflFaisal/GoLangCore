@@ -5,6 +5,8 @@ import (
 		"sync"
 )
 
+// Reference: https://medium.com/@souravchoudhary0306/mastering-concurrent-processing-a-step-by-step-guide-to-building-a-scalable-worker-pool-in-go-54093074c612
+
 // WorkerPool defines the contract for a worker pool implementation.
 type WorkerPool interface {
     Run()

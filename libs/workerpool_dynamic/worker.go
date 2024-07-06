@@ -9,6 +9,9 @@ import (
  "time"
 )
 
+// Reference: https://medium.com/@souravchoudhary0306/mastering-concurrent-processing-a-step-by-step-guide-to-building-a-scalable-worker-pool-in-go-54093074c612
+
+
 // Worker
 // The Worker struct represents a worker that processes requests. Each worker runs in its own goroutine and listens for incoming requests on a channel.
 
