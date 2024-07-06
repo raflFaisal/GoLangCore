@@ -46,6 +46,20 @@ func (d *dispatcher) RemoveWorker(minWorkers int) {
  }
 }
 
+// Initilise minimum set of workers 
+func (d *dispatcher) InitWorkers(minWorkers int) {
+  // Start initial set of workers
+  for i := 0; i < minWorkers; i++ {
+   fmt.Printf("Starting worker with id %d\n", i)
+   newWorker := &Worker{
+    Wg:         d.wg,
+    Id:         d.workerCount,
+    ReqHandler: ReqHandler,
+   }
+   d.AddWorker(newWorker)
+  }
+ }
+
 // ScaleWorkers dynamically adjusts the number of workers based on the load.
 func (d *dispatcher) ScaleWorkers(minWorkers, maxWorkers, loadThreshold int) {
 //  ticker := time.NewTicker(time.Microsecond)

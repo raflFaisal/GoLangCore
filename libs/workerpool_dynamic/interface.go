@@ -14,6 +14,7 @@ type Dispatcher interface {
  RemoveWorker(minWorkers int)
  LaunchWorker(id int, w WorkerLauncher)
  ScaleWorkers(minWorkers, maxWorkers, loadThreshold int)
+ InitWorkers(minWorkers int)
  MakeRequest(Request)
  Stop(ctx context.Context)
 }
