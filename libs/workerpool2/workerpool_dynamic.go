@@ -1,11 +1,10 @@
-package workerpool
+package workerpool2
 
 import (
 		"log"
 		"sync"
 )
 
-// Reference: https://github.com/syafdia/go-exercise/blob/master/src/concurrency/workerpool/worker_pool.go
 // WorkerPool defines the contract for a worker pool implementation.
 type WorkerPool interface {
     Run()
