@@ -1,5 +1,5 @@
 // interface.go 
-package workerpool2
+package workerpool
 
 import "context"
 

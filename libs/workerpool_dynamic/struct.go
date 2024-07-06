@@ -1,6 +1,6 @@
 // struct.go
 
-package workerpool2
+package workerpool
 
 import "time"
 
