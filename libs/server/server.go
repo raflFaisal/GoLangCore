@@ -7,15 +7,17 @@ import (
 	"net/http"
 	"time"
     "log"
+
+	"github.com/raflFaisal/GoLangCore/config/env"
 )
 
 var (
 	DefaultServer Server
 )
 
-// func init() {
-// 	DefaultServer = NewServer(env.Port)
-// }
+func init() {
+	DefaultServer = NewServer(env.Port)
+}
 
 type Server struct {
 	Port   int
